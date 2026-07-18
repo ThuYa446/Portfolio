@@ -28,17 +28,20 @@ jobs:
         with:
           node-version: 24
           cache: npm
+          cache-dependency-path: portfolio/package-lock.json
 
       - name: Install dependencies
+        working-directory: portfolio
         run: npm ci
 
       - name: Build Angular app for GitHub Pages
-        run: npm run build -- --base-href "/${{ github.event.repository.name }}/"
+        working-directory: portfolio
+        run: npm run build -- --base-href "/Portfolio/"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/portfolio/browser
+          path: portfolio/dist/portfolio/browser
 
   deploy:
     needs: build
