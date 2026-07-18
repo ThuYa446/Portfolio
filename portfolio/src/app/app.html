@@ -34,7 +34,7 @@
 
     <aside class="hero-panel reveal" [style.--delay]="'220ms'">
       <div class="hero-panel-header">
-        <img src="assets/profile.svg" alt="Thuya Oo monogram illustration" />
+        <img src="../assets/profile.svg" alt="Thuya Oo monogram illustration" />
         <div>
           <p class="panel-label">Based in Yangon, Myanmar</p>
           <h2>{{ profile.role }}</h2>
@@ -60,7 +60,7 @@
   </section>
 
   <section class="marquee reveal" [style.--delay]="'320ms'">
-    @for (point of introPoints; track point) {
+    @for (point of introPoints; track point)  {
       <span class="marquee-item">{{ point }}</span>
     }
   </section>
