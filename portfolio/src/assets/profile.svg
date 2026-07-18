@@ -1,13 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="title desc">
-  <title id="title">Profile placeholder</title>
-  <desc id="desc">Stylized profile placeholder avatar.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 640" role="img" aria-labelledby="title desc">
+  <title id="title">Thuya Oo monogram illustration</title>
+  <desc id="desc">A stylized engineering monogram card for Thuya Oo.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#7c3aed"/>
-      <stop offset="100%" stop-color="#06b6d4"/>
+      <stop offset="0%" stop-color="#0f2628"/>
+      <stop offset="100%" stop-color="#071214"/>
     </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#35e0b5"/>
+      <stop offset="100%" stop-color="#f2b766"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#35e0b5" stop-opacity=".38"/>
+      <stop offset="100%" stop-color="#35e0b5" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="400" height="400" rx="40" fill="url(#bg)"/>
-  <circle cx="200" cy="150" r="72" fill="#ffffff" fill-opacity="0.88"/>
-  <path d="M100 340c14-72 71-108 100-108s86 36 100 108" fill="#ffffff" fill-opacity="0.88"/>
+  <rect width="540" height="640" rx="56" fill="url(#bg)"/>
+  <rect x="44" y="44" width="452" height="552" rx="40" fill="none" stroke="#dcfff42e"/>
+  <circle cx="400" cy="160" r="160" fill="url(#glow)"/>
+  <g opacity=".12" stroke="#dcfff4">
+    <path d="M88 142h364"/>
+    <path d="M88 212h364"/>
+    <path d="M88 282h364"/>
+    <path d="M88 352h364"/>
+    <path d="M88 422h364"/>
+    <path d="M88 492h364"/>
+  </g>
+  <g fill="none" stroke="url(#accent)" stroke-linecap="round" stroke-width="5">
+    <path d="M110 118h74"/>
+    <path d="M356 118h74"/>
+    <path d="M110 522h74"/>
+    <path d="M356 522h74"/>
+    <path d="M132 110v74"/>
+    <path d="M408 110v74"/>
+    <path d="M132 456v74"/>
+    <path d="M408 456v74"/>
+  </g>
+  <text x="114" y="336" fill="#f5f8f3" font-family="Sora, Arial, sans-serif" font-size="178" font-weight="700" letter-spacing="-14">TO</text>
+  <path d="M116 390h302" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+  <text x="118" y="444" fill="#b9ccc6" font-family="Manrope, Arial, sans-serif" font-size="26" letter-spacing="5">SPRING BOOT / ANGULAR / CLOUD</text>
 </svg>
