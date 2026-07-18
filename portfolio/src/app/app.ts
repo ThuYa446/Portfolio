@@ -6,30 +6,30 @@ import { Component, signal } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('Frontend Developer Portfolio');
+  protected readonly title = signal('Thuya Oo | Frontend Developer Portfolio');
 
   readonly about = {
-    name: 'Your Name',
+    name: 'Thuya Oo',
     role: 'Frontend Developer & UI Designer',
     summary:
-      'I build elegant, performance-focused web experiences with Angular, responsive design systems, and a strong eye for detail. I enjoy turning creative ideas into polished, conversion-ready interfaces.',
-    location: 'Based in your city',
+      'I build polished, responsive web experiences with Angular, TypeScript, and a strong focus on clean UI architecture. I enjoy turning ideas into performant, user-friendly interfaces that feel modern and intentional.',
+    location: 'Based in Myanmar',
     email: 'your.email@example.com',
     phone: '+00 000 000 000'
   };
 
   readonly stats = [
-    { label: 'Projects', value: '8+' },
+    { label: 'Projects', value: '5+' },
     { label: 'Years', value: '2+' },
     { label: 'Focus', value: 'UI/UX' },
     { label: 'Stack', value: 'Angular' }
   ];
 
   readonly highlights = [
-    'Responsive, accessible UI development',
-    'Modern design systems and motion polish',
-    'Component-driven architecture with Angular',
-    'Strong collaboration with product and design teams'
+    'Responsive, accessible frontend development',
+    'Modern design systems and visual polish',
+    'Component-driven Angular architecture',
+    'Clear collaboration with product and design teams'
   ];
 
   readonly skills = [
@@ -48,24 +48,28 @@ export class App {
       title: 'Frontend Developer',
       company: 'Freelance / Personal Projects',
       period: '2024 – Present',
-      description: 'Designed and developed portfolio, landing pages, and UI-rich web experiences with a modern aesthetic.'
+      description: 'Built portfolio sites, landing pages, and polished UI-driven web experiences with a modern, conversion-focused approach.'
     },
     {
       title: 'Web Designer / Frontend Focus',
       company: 'Creative Portfolio Work',
       period: '2023 – 2024',
-      description: 'Created visually compelling interfaces, reusable components, and user-first experience flows.'
+      description: 'Created reusable interface components, responsive layouts, and visually compelling user experiences for digital products and personal branding.'
     }
   ];
 
   readonly projects = [
     {
-      title: 'Modern Portfolio Site',
-      description: 'A sleek personal brand site tailored for opportunities in web design and frontend development.'
+      title: 'Personal Portfolio',
+      description: 'A refined personal brand website showcasing frontend skills, design sensibility, and polished user experience.'
     },
     {
-      title: 'Responsive Landing Page',
-      description: 'A high-converting UI concept with strong typography, visual hierarchy, and smooth interactions.'
+      title: 'Responsive Landing Experience',
+      description: 'A conversion-ready landing page concept with clear visual hierarchy, consistent spacing, and smooth interactions.'
+    },
+    {
+      title: 'Design System Concepts',
+      description: 'Reusable UI patterns and component-driven layouts created for scalable, maintainable frontend implementation.'
     }
   ];
 }
