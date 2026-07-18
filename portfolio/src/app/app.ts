@@ -12,10 +12,10 @@ export class App {
     name: 'Thuya Oo',
     role: 'Frontend Developer & UI Designer',
     summary:
-      'I build polished, responsive web experiences with Angular, TypeScript, and a strong focus on clean UI architecture. I enjoy turning ideas into performant, user-friendly interfaces that feel modern and intentional.',
-    location: 'Based in Myanmar',
-    email: 'your.email@example.com',
-    phone: '+00 000 000 000'
+      'I create refined, responsive web experiences with Angular, TypeScript, and a strong focus on clean frontend architecture. I enjoy translating design ideas into polished, performant interfaces that feel modern, accessible, and user-centered.',
+    location: 'Yangon, Myanmar',
+    email: 'Available on request',
+    phone: 'Available on request'
   };
 
   readonly stats = [
