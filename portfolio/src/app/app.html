@@ -1,9 +1,13 @@
-<main class="portfolio-page">
-  <div class="ambient ambient-one" aria-hidden="true"></div>
-  <div class="ambient ambient-two" aria-hidden="true"></div>
+<main class="portfolio-shell">
+  <div class="mesh mesh-one" aria-hidden="true"></div>
+  <div class="mesh mesh-two" aria-hidden="true"></div>
+  <div class="mesh mesh-three" aria-hidden="true"></div>
 
-  <section class="topbar reveal" [style.--delay]="'40ms'">
-    <a class="brand-mark" href="#top">TO.</a>
+  <header class="site-header reveal" [style.--delay]="'40ms'">
+    <a class="brand" href="#top">
+      <span class="brand-mark">TO</span>
+      <span class="brand-note">Resume-driven portfolio</span>
+    </a>
 
     <nav class="nav-links" aria-label="Primary">
       @for (item of navItems; track item.href) {
@@ -11,111 +15,129 @@
       }
     </nav>
 
-    <a class="ghost-link" [href]="'mailto:' + profile.email">Let's talk</a>
-  </section>
+    <a class="header-link" [href]="'mailto:' + profile.email">Email me</a>
+  </header>
 
-  <section class="hero-grid" id="top">
+  <section class="hero-stage" id="top">
     <div class="hero-copy reveal" [style.--delay]="'120ms'">
-      <p class="eyebrow">Senior Fullstack Engineer / Spring Boot / Angular / Cloud Delivery</p>
-      <h1><span>{{ profile.name }}</span> builds secure, high-trust platforms for banking and modern SaaS.</h1>
-      <p class="lead">{{ profile.summary }}</p>
+      <p class="section-kicker">{{ profile.role }}</p>
+      <h1><span>{{ profile.name }}</span> builds dependable software for banking operations, AI-assisted hiring, and cloud-ready products.</h1>
+      <p class="hero-summary">{{ profile.summary }}</p>
 
       <div class="hero-actions">
-        <a class="primary-btn" [href]="'mailto:' + profile.email">Start a conversation</a>
-        <a class="secondary-btn" href="#experience">View experience</a>
+        <a class="primary-btn" href="#projects">View projects</a>
+        <a class="secondary-btn" [href]="'mailto:' + profile.email">Start a conversation</a>
       </div>
 
-      <ul class="contact-meta">
-        <li>{{ profile.location }}</li>
-        <li>{{ profile.email }}</li>
-        <li>{{ profile.phone }}</li>
+      <ul class="hero-points">
+        @for (point of heroPoints; track point) {
+          <li>{{ point }}</li>
+        }
       </ul>
     </div>
 
-    <aside class="hero-panel reveal" [style.--delay]="'220ms'">
-      <div class="hero-panel-header">
-        <img src="assets/profile.svg" alt="Thuya Oo monogram illustration" />
+    <aside class="hero-rail">
+      <article class="portrait-card reveal" [style.--delay]="'180ms'">
+        <img src="assets/profile.svg" alt="Portrait of Thuya Oo" />
+      </article>
+
+      <article class="profile-card reveal" [style.--delay]="'260ms'">
         <div>
-          <p class="panel-label">Based in Yangon, Myanmar</p>
+          <p class="section-kicker">At a glance</p>
           <h2>{{ profile.role }}</h2>
-          <p>Hands-on across architecture, implementation, reporting-heavy workflows, and cloud-backed delivery.</p>
+          <p>
+            From Central Bank reporting flows to recruiter automation, Thuya works best where product detail and system
+            reliability both matter.
+          </p>
         </div>
-      </div>
 
-      <div class="stat-grid">
-        @for (stat of stats; track stat.label; let i = $index) {
-          <article class="stat-card reveal" [style.--delay]="(280 + i * 70) + 'ms'">
-            <strong>{{ stat.value }}</strong>
-            <span>{{ stat.label }}</span>
-          </article>
-        }
-      </div>
-
-      <div class="badge-row">
-        @for (badge of badges; track badge) {
-          <span class="badge">{{ badge }}</span>
-        }
-      </div>
+        <ul class="meta-list">
+          <li>
+            <span>Based in</span>
+            <strong>{{ profile.location }}</strong>
+          </li>
+          <li>
+            <span>Email</span>
+            <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+          </li>
+          <li>
+            <span>Phone</span>
+            <a [href]="'tel:' + profile.phone">{{ profile.phone }}</a>
+          </li>
+        </ul>
+      </article>
     </aside>
   </section>
 
-  <section class="marquee reveal" [style.--delay]="'320ms'">
-    @for (point of introPoints; track point)  {
-      <span class="marquee-item">{{ point }}</span>
+  <section class="stats-row">
+    @for (stat of stats; track stat.label; let i = $index) {
+      <article class="stat-card reveal" [style.--delay]="(320 + i * 70) + 'ms'">
+        <strong>{{ stat.value }}</strong>
+        <span>{{ stat.label }}</span>
+        <p>{{ stat.note }}</p>
+      </article>
     }
   </section>
 
-  <section class="section-shell intro-grid">
-    <article class="glass-card narrative reveal" [style.--delay]="'100ms'">
-      <p class="section-kicker">Profile</p>
-      <h2>From regulated finance to recruiter tooling, the through-line is dependable product delivery.</h2>
+  <section class="section" id="expertise">
+    <div class="section-heading reveal" [style.--delay]="'100ms'">
+      <div>
+        <p class="section-kicker">Expertise</p>
+        <h2>Full-stack capability shaped by regulated systems, product workflows, and operational ownership.</h2>
+      </div>
       <p>
-        Thuya blends backend depth, frontend execution, and operational awareness. His experience spans enterprise BFSI
-        systems, MIS reporting, cheque truncation workflows, and a modern ATS product with AI-assisted resume parsing.
+        The strongest pattern across the resume is range with responsibility: backend architecture, Angular delivery,
+        cloud operations, reporting-heavy business logic, and the calm debugging work that keeps releases dependable.
       </p>
-      <p>
-        That mix shows up in the way he builds: clear architecture, secure flows, careful data handling, and interfaces
-        that help teams move faster without sacrificing accuracy.
-      </p>
-    </article>
+    </div>
 
-    <div class="detail-stack">
-      @for (card of valueCards; track card.title; let i = $index) {
-        <article class="value-card reveal" [style.--delay]="(160 + i * 80) + 'ms'">
-          <h3>{{ card.title }}</h3>
-          <p>{{ card.text }}</p>
+    <div class="specialty-grid">
+      @for (area of focusAreas; track area.title; let i = $index) {
+        <article class="specialty-card reveal" [style.--delay]="(160 + i * 70) + 'ms'">
+          <h3>{{ area.title }}</h3>
+          <p>{{ area.text }}</p>
+          <div class="tag-list">
+            @for (tag of area.tags; track tag) {
+              <span>{{ tag }}</span>
+            }
+          </div>
         </article>
       }
     </div>
   </section>
 
-  <section class="section-shell" id="experience">
+  <section class="section" id="experience">
     <div class="section-heading reveal" [style.--delay]="'100ms'">
       <div>
         <p class="section-kicker">Experience</p>
-        <h2>Work shaped by enterprise constraints, product momentum, and real operational risk.</h2>
+        <h2>A path from banking infrastructure in Yangon to remote ATS delivery for a Singapore product team.</h2>
       </div>
       <p>
-        The recent path moves from banking infrastructure and regulatory systems into SaaS hiring workflows, while
-        keeping the same engineering standards around reliability, performance, and maintainability.
+        From October 2019 through February 2026, the work moves across enterprise BFSI systems and modern HR-tech
+        products while keeping the same standards around maintainability, security, and delivery ownership.
       </p>
     </div>
 
-    <div class="timeline">
+    <div class="experience-flow">
       @for (item of experience; track item.company; let i = $index) {
-        <article class="timeline-card reveal" [style.--delay]="(160 + i * 100) + 'ms'">
-          <div class="timeline-top">
+        <article class="experience-card reveal" [style.--delay]="(160 + i * 100) + 'ms'">
+          <div class="experience-head">
             <div>
-              <p class="timeline-company">{{ item.company }}</p>
+              <p class="meta-label">{{ item.company }} / {{ item.location }}</p>
               <h3>{{ item.role }}</h3>
             </div>
-            <p class="timeline-period">{{ item.period }}</p>
+            <span class="date-chip">{{ item.period }}</span>
           </div>
 
-          <p class="timeline-location">{{ item.location }}</p>
-          <p class="timeline-summary">{{ item.summary }}</p>
+          <p class="experience-summary">{{ item.summary }}</p>
 
-          <ul class="bullet-list">
+          <div class="stack-row">
+            @for (tool of item.stack; track tool) {
+              <span>{{ tool }}</span>
+            }
+          </div>
+
+          <ul class="detail-list">
             @for (achievement of item.achievements; track achievement) {
               <li>{{ achievement }}</li>
             }
@@ -125,17 +147,36 @@
     </div>
   </section>
 
-  <section class="section-shell split-stage" id="expertise">
-    <article class="glass-card reveal" [style.--delay]="'100ms'">
-      <p class="section-kicker">Domain Expertise</p>
-      <h2>Deep context in the systems where precision matters.</h2>
+  <section class="section knowledge-layout">
+    <article class="panel-card reveal" [style.--delay]="'100ms'">
+      <p class="section-kicker">Skills</p>
+      <h2>Technical depth organized around how real software gets delivered.</h2>
 
-      <div class="domain-grid">
+      <div class="skill-cluster-grid">
+        @for (group of skillGroups; track group.title; let i = $index) {
+          <article class="skill-cluster reveal" [style.--delay]="(180 + i * 60) + 'ms'">
+            <h3>{{ group.title }}</h3>
+            <p>{{ group.summary }}</p>
+            <div class="tag-list">
+              @for (item of group.items; track item) {
+                <span>{{ item }}</span>
+              }
+            </div>
+          </article>
+        }
+      </div>
+    </article>
+
+    <article class="panel-card reveal" [style.--delay]="'180ms'">
+      <p class="section-kicker">Domain Expertise</p>
+      <h2>Context in the systems where precision, traceability, and trust matter.</h2>
+
+      <div class="domain-stack">
         @for (domain of domains; track domain.title; let i = $index) {
-          <article class="domain-card reveal" [style.--delay]="(160 + i * 70) + 'ms'">
+          <article class="domain-card reveal" [style.--delay]="(220 + i * 70) + 'ms'">
             <h3>{{ domain.title }}</h3>
             <p>{{ domain.strapline }}</p>
-            <div class="inline-list">
+            <div class="tag-list">
               @for (detail of domain.details; track detail) {
                 <span>{{ detail }}</span>
               }
@@ -144,42 +185,39 @@
         }
       </div>
     </article>
-
-    <article class="glass-card reveal" [style.--delay]="'180ms'">
-      <p class="section-kicker">Core Stack</p>
-      <h2>Production-ready across the full delivery path.</h2>
-
-      <div class="skill-groups">
-        @for (group of skillGroups; track group.title; let i = $index) {
-          <article class="skill-group reveal" [style.--delay]="(220 + i * 60) + 'ms'">
-            <h3>{{ group.title }}</h3>
-            <p>{{ group.items.join(' / ') }}</p>
-          </article>
-        }
-      </div>
-    </article>
   </section>
 
-  <section class="section-shell" id="projects">
+  <section class="section" id="projects">
     <div class="section-heading reveal" [style.--delay]="'100ms'">
       <div>
-        <p class="section-kicker">Selected Systems</p>
-        <h2>Work that reflects both technical range and domain ownership.</h2>
+        <p class="section-kicker">Projects</p>
+        <h2>Selected systems that show both technical range and domain ownership.</h2>
       </div>
       <p>
-        These projects span enterprise reporting, bank settlement operations, recruiter tooling, and security-focused
-        personal work.
+        These case studies reflect the strongest project threads from the resume: recruiter tooling, banking MIS,
+        cheque operations, and security-focused personal engineering work.
       </p>
     </div>
 
     <div class="project-grid">
       @for (project of projects; track project.title; let i = $index) {
         <article class="project-card reveal" [style.--delay]="(160 + i * 80) + 'ms'">
-          <span class="project-year">{{ project.year }}</span>
+          <div class="project-top">
+            <span class="date-chip">{{ project.period }}</span>
+            <span class="project-category">{{ project.category }}</span>
+          </div>
+
           <h3>{{ project.title }}</h3>
-          <p>{{ project.description }}</p>
-          <div class="tag-row">
-            @for (tag of project.tags; track tag) {
+          <p>{{ project.overview }}</p>
+
+          <ul class="detail-list">
+            @for (outcome of project.outcomes; track outcome) {
+              <li>{{ outcome }}</li>
+            }
+          </ul>
+
+          <div class="tag-list">
+            @for (tag of project.stack; track tag) {
               <span>{{ tag }}</span>
             }
           </div>
@@ -188,28 +226,27 @@
     </div>
   </section>
 
-  <section class="section-shell closing-grid">
-    <article class="glass-card reveal" [style.--delay]="'100ms'">
-      <p class="section-kicker">Education</p>
-      <h2>Strong foundations, sharpened by production work.</h2>
+  <section class="section closing-grid">
+    <article class="panel-card reveal" [style.--delay]="'100ms'">
+      <p class="section-kicker">Education and Certification</p>
+      <h2>Grounded in computer science and sharpened by production delivery.</h2>
 
-      <ul class="info-list">
-        <li>
-          <strong>{{ education.degree }}</strong>
-          {{ education.school }} / {{ education.period }}
-        </li>
-        <li>
-          <strong>Certification</strong>
-          {{ education.certification }}
-        </li>
-      </ul>
+      <div class="credential-grid">
+        @for (credential of credentials; track credential.title; let i = $index) {
+          <article class="credential-card reveal" [style.--delay]="(160 + i * 60) + 'ms'">
+            <h3>{{ credential.title }}</h3>
+            <p>{{ credential.detail }}</p>
+            <p>{{ credential.note }}</p>
+          </article>
+        }
+      </div>
     </article>
 
-    <article class="glass-card reveal" [style.--delay]="'180ms'">
-      <p class="section-kicker">Communication</p>
-      <h2>Calm, reliable collaboration across technical and non-technical teams.</h2>
+    <article class="panel-card reveal" [style.--delay]="'180ms'">
+      <p class="section-kicker">Working Style</p>
+      <h2>Calm collaboration across product, QA, infrastructure, and business teams.</h2>
 
-      <ul class="info-list">
+      <ul class="workstyle-list">
         @for (point of collaborationPoints; track point) {
           <li>{{ point }}</li>
         }
@@ -217,21 +254,26 @@
     </article>
   </section>
 
-  <section class="contact-banner reveal" id="contact" [style.--delay]="'120ms'">
-    <div>
-      <p class="section-kicker">Contact</p>
-      <h2>Open to building systems that need both technical depth and steady delivery.</h2>
+  <section class="contact-stage reveal" id="contact" [style.--delay]="'120ms'">
+    <div class="contact-copy">
+      <p class="contact-kicker">Contact</p>
+      <h2>Building reliable software with clear ownership and strong delivery habits.</h2>
       <p>
-        If you need someone who can move between Angular UI, Spring Boot services, data-heavy workflows, and release
-        execution, Thuya is ready for the conversation.
+        If your team needs someone who can move between Angular UI, Spring Boot services, reporting-heavy workflows,
+        and cloud-backed release execution, this portfolio is the quick view of that range.
       </p>
-      <p class="footer-note">{{ profile.location }} / {{ profile.email }} / {{ profile.phone }}</p>
+
+      <div class="footer-meta">
+        <span>{{ profile.location }}</span>
+        <span>{{ profile.email }}</span>
+        <span>{{ profile.phone }}</span>
+      </div>
     </div>
 
-    <div class="contact-actions">
+    <div class="contact-links">
       @for (link of contactLinks; track link.label) {
         <a
-          class="link-pill"
+          class="contact-card"
           [href]="link.href"
           [attr.target]="link.external ? '_blank' : null"
           [attr.rel]="link.external ? 'noreferrer' : null"
